@@ -51,25 +51,25 @@ export function CloudSyncManager() {
 
   if (store.account) {
     return (
-      <div className="bg-white/60 backdrop-blur-xl rounded-[2rem] border border-white/60 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 space-y-6">
+      <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] border border-white/40 dark:border-slate-800 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 space-y-6 transition-colors">
         <div className="flex items-center gap-3 mb-2">
-          <div className="bg-green-50 text-green-600 p-2.5 rounded-2xl">
+          <div className="bg-green-50 dark:bg-green-500/10 text-green-600 dark:text-green-400 p-2.5 rounded-2xl">
             <CheckCircle2 className="w-6 h-6 sm:w-7 sm:h-7" />
           </div>
           <div>
-            <h2 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">👋 Здравствуйте, {store.account.name}!</h2>
-            <p className="text-xs sm:text-sm text-green-600 font-medium mt-0.5">✅ Облачная синхронизация активна</p>
+            <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">👋 Здравствуйте, {store.account.name}!</h2>
+            <p className="text-xs sm:text-sm text-green-600 dark:text-green-400 font-medium mt-0.5">✅ Облачная синхронизация активна</p>
           </div>
         </div>
         
-        <p className="text-sm text-slate-500 font-medium">
+        <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
           Все ваши изменения сохраняются автоматически в фоновом режиме.
         </p>
 
         <Button 
           onClick={handleLogout} 
           variant="secondary"
-          className="w-full sm:w-auto h-12 rounded-xl text-red-600 hover:text-red-700 hover:bg-red-50 transition-all active:scale-[0.98]"
+          className="w-full sm:w-auto h-12 rounded-xl text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 bg-red-50 dark:bg-red-500/10 hover:bg-red-100 dark:hover:bg-red-500/20 border-none transition-all active:scale-[0.98]"
         >
           <LogOut className="w-4 h-4 mr-2" />
           Выйти из аккаунта
@@ -79,14 +79,14 @@ export function CloudSyncManager() {
   }
 
   return (
-    <div className="bg-white/60 backdrop-blur-xl rounded-[2rem] border border-white/60 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 space-y-6">
+    <div className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] border border-white/40 dark:border-slate-800 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 space-y-6 transition-colors">
       <div className="flex items-center gap-3 mb-2">
-        <div className="bg-blue-50 text-blue-600 p-2.5 rounded-2xl">
+        <div className="bg-blue-50 dark:bg-blue-500/10 text-blue-600 dark:text-blue-400 p-2.5 rounded-2xl">
           <Cloud className="w-6 h-6 sm:w-7 sm:h-7" />
         </div>
         <div>
-          <h2 className="text-lg sm:text-xl font-bold text-slate-900 tracking-tight">Авторизация</h2>
-          <p className="text-xs sm:text-sm text-slate-500 font-medium mt-0.5">Войдите, чтобы включить авто-синхронизацию</p>
+          <h2 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white tracking-tight">Авторизация</h2>
+          <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-medium mt-0.5">Войдите, чтобы включить авто-синхронизацию</p>
         </div>
       </div>
 
@@ -97,7 +97,7 @@ export function CloudSyncManager() {
           placeholder="Например, Азамат"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          className="h-12 bg-slate-50/50 border-slate-200 text-base"
+          className="h-12 bg-white/50 dark:bg-slate-800/50 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-base"
         />
         <Input
           label="Ваш номер телефона (аккаунт)"
@@ -105,7 +105,7 @@ export function CloudSyncManager() {
           placeholder="+996 555 123 456"
           value={phone}
           onChange={(e) => setPhone(e.target.value)}
-          className="h-12 bg-slate-50/50 border-slate-200 text-base"
+          className="h-12 bg-white/50 dark:bg-slate-800/50 border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white text-base"
         />
 
         <Button 

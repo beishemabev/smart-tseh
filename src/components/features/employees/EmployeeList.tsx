@@ -81,8 +81,8 @@ export function EmployeeList({ users, onEdit, onDelete, onAddAdvance }: Employee
               <h4 className="text-[17px] font-bold text-slate-900 dark:text-white truncate">
                 {user.name}
               </h4>
-              <div className="flex flex-wrap items-center mt-1.5 gap-2 text-sm text-slate-500 dark:text-slate-400 font-medium">
-                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              <div className="flex flex-wrap items-center mt-1.5 gap-2 text-sm text-slate-600 dark:text-slate-400 font-medium">
+                <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
                   {roleMap[user.role]}
                 </span>
                 
@@ -101,13 +101,13 @@ export function EmployeeList({ users, onEdit, onDelete, onAddAdvance }: Employee
             <div className="flex-shrink-0 flex items-center">
               {/* Desktop Actions */}
               <div className="hidden sm:flex items-center space-x-2">
-                <Button variant="ghost" size="icon" onClick={() => onAddAdvance(user)} title="Выдать аванс" className="text-emerald-500 hover:text-emerald-600 hover:bg-emerald-50">
+                <Button variant="ghost" size="icon" onClick={() => onAddAdvance(user)} title="Выдать аванс" className="text-emerald-600 dark:text-emerald-500 hover:text-emerald-700 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-emerald-500/10">
                   <Banknote className="w-4 h-4" />
                 </Button>
-                <Button variant="ghost" size="icon" onClick={() => onEdit(user)} title="Редактировать" className="text-gray-500 hover:text-black">
+                <Button variant="ghost" size="icon" onClick={() => onEdit(user)} title="Редактировать" className="text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800">
                   <Edit2 className="w-4 h-4" />
                 </Button>
-                <Button variant="ghost" size="icon" onClick={() => onDelete(user)} title="Удалить" className="text-gray-500 hover:text-red-500">
+                <Button variant="ghost" size="icon" onClick={() => onDelete(user)} title="Удалить" className="text-slate-600 dark:text-slate-400 hover:text-red-600 dark:hover:text-red-400 hover:bg-red-50 dark:hover:bg-red-500/10">
                   <Trash2 className="w-4 h-4" />
                 </Button>
               </div>

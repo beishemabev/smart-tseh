@@ -35,12 +35,12 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
         aria-hidden="true"
       />
       <div className={cn(
-        "relative w-[92%] max-w-lg bg-white/85 backdrop-blur-3xl rounded-[2rem] border border-white/60 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col max-h-[85vh] mb-[5vh] sm:mb-0",
+        "relative w-[92%] max-w-lg bg-white/90 dark:bg-slate-900/90 backdrop-blur-3xl rounded-[2rem] border border-white/40 dark:border-slate-800 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.3)] overflow-hidden flex flex-col max-h-[85vh] mb-[5vh] sm:mb-0",
         "animate-in slide-in-from-bottom-8 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-300"
       )}>
-        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-white/40 bg-white/30">
-          <h2 className="text-[19px] font-bold text-slate-900 tracking-tight">{title}</h2>
-          <Button variant="ghost" size="icon" onClick={onClose} className="rounded-full h-9 w-9 bg-white shadow-sm border border-slate-100 hover:bg-slate-100 text-slate-500 hover:text-slate-900 transition-colors">
+        <div className="flex items-center justify-between p-5 sm:p-6 border-b border-slate-200/50 dark:border-slate-800/50 bg-white/30 dark:bg-slate-900/30">
+          <h2 className="text-[19px] font-bold text-slate-900 dark:text-white tracking-tight">{title}</h2>
+          <Button variant="ghost" size="icon" onClick={onClose} className="rounded-full h-9 w-9 bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white transition-colors">
             <X className="h-4 w-4" />
             <span className="sr-only">Закрыть</span>
           </Button>

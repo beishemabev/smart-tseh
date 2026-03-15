@@ -115,8 +115,8 @@ export function QuickEntryForm({ selectedDate }: QuickEntryFormProps) {
   if (users.length === 0 || taskTypes.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center p-8 sm:p-12 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] border border-white/40 dark:border-slate-800 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] text-center transition-colors">
-        <div className="bg-blue-50 dark:bg-blue-500/10 p-5 rounded-full mb-5 shadow-sm shadow-blue-100/50 dark:shadow-blue-900/20">
-          <svg className="w-10 h-10 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div className="bg-slate-100 dark:bg-blue-500/10 p-5 rounded-full mb-5 shadow-sm shadow-slate-200/50 dark:shadow-blue-900/20">
+          <svg className="w-10 h-10 text-slate-700 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
           </svg>
         </div>
@@ -125,10 +125,10 @@ export function QuickEntryForm({ selectedDate }: QuickEntryFormProps) {
           Для начала работы добавьте сотрудников и расценки на швейные операции.
         </p>
         <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-          <Button onClick={() => window.location.href = '/employees'} variant="primary" className="w-full sm:w-auto shadow-blue-500/25">
+          <Button onClick={() => window.location.href = '/employees'} variant="primary" className="w-full sm:w-auto shadow-slate-900/10">
             Добавить швей
           </Button>
-          <Button onClick={() => window.location.href = '/settings'} variant="secondary" className="w-full sm:w-auto bg-slate-50 border-slate-200">
+          <Button onClick={() => window.location.href = '/settings'} variant="secondary" className="w-full sm:w-auto bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700">
             Настроить прайс
           </Button>
         </div>
@@ -140,12 +140,12 @@ export function QuickEntryForm({ selectedDate }: QuickEntryFormProps) {
     <form onSubmit={handleSubmit} className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] border border-white/40 dark:border-slate-800 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 space-y-6 transition-all outline-none focus-within:ring-2 focus-within:ring-blue-500/20 focus-within:border-blue-300 dark:focus-within:border-blue-700">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1.5">
-          <label htmlFor="user-select" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Сотрудник</label>
+          <label htmlFor="user-select" className="block text-sm font-semibold text-slate-800 dark:text-slate-300 ml-1">Сотрудник</label>
           <select
             id="user-select"
             value={selectedUser}
             onChange={(e) => setSelectedUser(e.target.value)}
-            className="flex h-12 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 dark:text-white px-4 py-2 text-base ring-offset-white dark:ring-offset-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/20 focus-visible:border-blue-500 transition-all shadow-sm hover:border-slate-300 dark:hover:border-slate-600 cursor-pointer"
+            className="flex h-12 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-white px-4 py-2 text-base ring-offset-white dark:ring-offset-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/20 focus-visible:border-blue-500 transition-all shadow-sm hover:border-slate-400 dark:hover:border-slate-600 cursor-pointer"
           >
             <option value="" disabled className="dark:bg-slate-900">-- Выберите швею --</option>
             {users.map(u => (
@@ -155,12 +155,12 @@ export function QuickEntryForm({ selectedDate }: QuickEntryFormProps) {
         </div>
 
         <div className="space-y-1.5">
-          <label htmlFor="task-select" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Операция</label>
+          <label htmlFor="task-select" className="block text-sm font-semibold text-slate-800 dark:text-slate-300 ml-1">Операция</label>
           <select
             id="task-select"
             value={selectedTask}
             onChange={(e) => setSelectedTask(e.target.value)}
-            className="flex h-12 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 dark:text-white px-4 py-2 text-base ring-offset-white dark:ring-offset-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/20 focus-visible:border-blue-500 transition-all shadow-sm hover:border-slate-300 dark:hover:border-slate-600 cursor-pointer"
+            className="flex h-12 w-full rounded-xl border border-slate-300 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-white px-4 py-2 text-base ring-offset-white dark:ring-offset-slate-950 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/20 focus-visible:border-blue-500 transition-all shadow-sm hover:border-slate-400 dark:hover:border-slate-600 cursor-pointer"
           >
             <option value="" disabled className="dark:bg-slate-900">-- Выберите операцию --</option>
             {sortedTaskTypes.map(t => (
@@ -179,14 +179,14 @@ export function QuickEntryForm({ selectedDate }: QuickEntryFormProps) {
               min="1"
               placeholder="0"
               value={quantityStr}
-              className="h-12 text-lg font-medium bg-slate-50/50 border-slate-200"
+              className="h-12 text-lg font-medium bg-white/50 dark:bg-slate-800/50 text-slate-900 dark:text-white border-slate-300 dark:border-slate-700"
               onChange={(e) => {
                 setQuantityStr(e.target.value);
                 if (error) setError('');
               }}
             />
           </div>
-          <Button type="submit" className="w-full sm:w-2/3 h-12 text-lg font-bold shadow-blue-500/25 active:scale-[0.98]">
+          <Button type="submit" className="w-full sm:w-2/3 h-12 text-lg font-bold shadow-slate-900/10 active:scale-[0.98]">
             Добавить запись
           </Button>
         </div>
