@@ -121,7 +121,7 @@ export default function SettingsPage() {
       {/* Footer Version */}
       <div className="pt-8 text-center pb-4">
         <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">
-          SmartTseh v1.0.0. Работает полностью офлайн
+          Швейкальк v1.0.0. Работает полностью офлайн
         </p>
       </div>
     </main>

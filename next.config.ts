@@ -8,6 +8,7 @@ const withPWA = withPWAInit({
 
 const nextConfig: NextConfig = {
   /* config options here */
+  turbopack: {}, // <-- Вот оно, наше спасение от ошибки
 };
 
 export default withPWA(nextConfig);

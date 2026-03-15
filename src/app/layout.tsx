@@ -18,13 +18,13 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "SmartTseh",
+  title: "Швейкальк",
   description: "Tracker for Sewing Workshops",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "SmartTseh",
+    title: "Швейкальк",
   },
 };
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${plusJakartaSans.variable} font-sans antialiased bg-gray-50 dark:bg-slate-950 min-h-screen pb-20 transition-colors`}
+        className={`${plusJakartaSans.variable} font-sans antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-50 min-h-screen pb-20 transition-colors`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           {children}

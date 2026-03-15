@@ -10,9 +10,9 @@ export function generateId() {
 }
 
 export function formatCurrency(amount: number) {
-  return new Intl.NumberFormat('ru-RU', {
+  return new Intl.NumberFormat('ru-KG', {
     style: 'currency',
-    currency: 'RUB',
+    currency: 'KGS',
     minimumFractionDigits: 0,
     maximumFractionDigits: 0,
   }).format(amount);

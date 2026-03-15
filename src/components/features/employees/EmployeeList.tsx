@@ -88,7 +88,7 @@ export function EmployeeList({ users, onEdit, onDelete, onAddAdvance }: Employee
                 
                 {/* Feature 3: Real-time Balance Badge */}
                 <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold ${isPositive ? 'bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-400' : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400'}`}>
-                  Баланс (нед): {balance} ₽
+                  Баланс (нед): {balance} сом
                 </span>
 
                 {user.phone && (

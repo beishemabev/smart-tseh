@@ -5,7 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { useStoreHydration } from '@/hooks/useStoreHydration';
 import { format, startOfWeek, endOfWeek, parseISO } from 'date-fns';
 import { ru } from 'date-fns/locale';
-import { FileText, Send, Download } from 'lucide-react';
+import { FileText, Send, Download, Users } from 'lucide-react';
 
 import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
@@ -266,8 +266,14 @@ export default function ReportsPage() {
 
       {/* Missing Seamstress Prompt */}
       {!selectedUser && users.length > 0 && (
-        <div className="text-center p-8 text-slate-500 dark:text-slate-400 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md border-2 border-dashed border-white/80 dark:border-slate-700 rounded-[2rem]">
-          Выберите сотрудника для расчета зарплаты
+        <div className="flex flex-col items-center justify-center p-10 sm:p-12 text-center bg-white/40 dark:bg-slate-900/40 backdrop-blur-xl border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-[2rem] transition-colors">
+          <div className="w-16 h-16 bg-slate-100 dark:bg-slate-800 rounded-full flex items-center justify-center mb-4 ring-8 ring-slate-50 dark:ring-slate-900/50">
+            <Users className="w-8 h-8 text-slate-400 dark:text-slate-500" />
+          </div>
+          <h3 className="text-lg font-semibold text-slate-700 dark:text-slate-300 mb-1">Сотрудник не выбран</h3>
+          <p className="text-slate-500 dark:text-slate-400 text-sm max-w-[250px]">
+            Выберите швею из списка выше, чтобы рассчитать и скачать зарплату
+          </p>
         </div>
       )}
     </main>
