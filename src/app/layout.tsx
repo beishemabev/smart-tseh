@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { BottomNav } from "@/components/ui/BottomNav";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -33,12 +34,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ru">
+    <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${plusJakartaSans.variable} font-sans antialiased bg-gray-50 min-h-screen pb-20`}
+        className={`${plusJakartaSans.variable} font-sans antialiased bg-gray-50 dark:bg-slate-950 min-h-screen pb-20 transition-colors`}
       >
-        {children}
-        <BottomNav />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+          <BottomNav />
+        </ThemeProvider>
       </body>
     </html>
   );

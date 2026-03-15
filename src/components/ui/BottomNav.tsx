@@ -34,8 +34,8 @@ export function BottomNav() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-4 right-4 z-50 flex justify-center pb-safe">
-      <nav className="flex justify-around items-center h-[4.5rem] bg-white/70 backdrop-blur-2xl border border-white/60 rounded-[2rem] shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] px-2 w-full max-w-md">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-[400px]">
+      <nav className="flex justify-around items-center h-[4.5rem] bg-slate-900 shadow-2xl rounded-full px-2 ring-1 ring-white/10">
         {navItems.map((item) => {
           const isActive = pathname === item.href;
           const Icon = item.icon;
@@ -44,23 +44,23 @@ export function BottomNav() {
             <Link
               key={item.href}
               href={item.href}
-              className="relative flex flex-col items-center justify-center w-full h-full space-y-1 group"
+              className="relative flex flex-col items-center justify-center w-full h-full space-y-1 group px-1"
             >
               <motion.div 
                 whileTap={{ scale: 0.9 }}
                 className={cn(
                   "flex items-center justify-center w-12 h-8 rounded-full transition-all duration-300",
-                  isActive ? "bg-blue-100" : "bg-transparent group-hover:bg-gray-50"
+                  isActive ? "bg-white/20" : "bg-transparent group-hover:bg-white/10"
                 )}
               >
                 <Icon className={cn(
                   "w-[22px] h-[22px] transition-colors duration-300", 
-                  isActive ? "text-blue-600 stroke-[2.5px]" : "text-slate-400 stroke-2 group-hover:text-slate-600"
+                  isActive ? "text-white stroke-[2.5px]" : "text-white/60 stroke-2 group-hover:text-white/90"
                 )} />
               </motion.div>
               <span className={cn(
                 "text-[10px] font-semibold tracking-wide transition-colors duration-300",
-                isActive ? "text-blue-600" : "text-slate-400 group-hover:text-slate-600"
+                isActive ? "text-white" : "text-white/60 group-hover:text-white/90"
               )}>
                 {item.label}
               </span>

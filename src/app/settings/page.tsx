@@ -11,6 +11,7 @@ import { Modal } from '@/components/ui/Modal';
 import { SettingsTaskForm } from '@/components/features/settings/SettingsTaskForm';
 import { SettingsTaskList } from '@/components/features/settings/SettingsTaskList';
 import { CloudSyncManager } from '@/components/features/settings/CloudSyncManager';
+import { ThemeToggle } from '@/components/features/settings/ThemeToggle';
 
 export default function SettingsPage() {
   const isHydrated = useStoreHydration();
@@ -56,14 +57,19 @@ export default function SettingsPage() {
     <main className="max-w-3xl mx-auto p-4 sm:p-8 pb-32 sm:pb-8 space-y-10">
       {/* Header */}
       <div>
-        <h1 className="text-2xl sm:text-[28px] font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
-          <SettingsIcon className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
+        <h1 className="text-2xl sm:text-[28px] font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2.5">
+          <SettingsIcon className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400" />
           Настройки
         </h1>
-        <p className="text-sm font-medium text-slate-500 mt-1">
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">
           Каталог операций (расценки) и управление данными устройства
         </p>
       </div>
+
+      {/* Theme Toggle Section */}
+      <section>
+        <ThemeToggle />
+      </section>
 
       {/* Cloud Sync Section */}
       <section>
@@ -73,7 +79,7 @@ export default function SettingsPage() {
       {/* Task Types / Prices Catalog */}
       <section className="space-y-5">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold text-slate-900 tracking-tight">
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">
             Каталог операций
           </h2>
           <Button onClick={handleOpenAdd} size="sm" className="hidden sm:flex rounded-xl font-semibold shadow-blue-500/20 active:scale-95">
@@ -114,7 +120,7 @@ export default function SettingsPage() {
 
       {/* Footer Version */}
       <div className="pt-8 text-center pb-4">
-        <p className="text-xs text-gray-400 font-medium">
+        <p className="text-xs text-gray-400 dark:text-gray-500 font-medium">
           SmartTseh v1.0.0. Работает полностью офлайн
         </p>
       </div>

@@ -157,28 +157,28 @@ export default function ReportsPage() {
     <main className="max-w-3xl mx-auto p-4 sm:p-8 pb-32 sm:pb-8 space-y-8">
       {/* Header */}
       <div>
-        <h1 className="text-2xl sm:text-[28px] font-bold tracking-tight text-slate-900 flex items-center gap-2.5">
-          <FileText className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600" />
+        <h1 className="text-2xl sm:text-[28px] font-bold tracking-tight text-slate-900 dark:text-white flex items-center gap-2.5">
+          <FileText className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600 dark:text-blue-400" />
           Отчеты и Зарплата
         </h1>
-        <p className="text-sm font-medium text-slate-500 mt-1">
+        <p className="text-sm font-medium text-slate-500 dark:text-slate-400 mt-1">
           Расчет зарплаты за неделю или произвольный период
         </p>
       </div>
 
       {/* Filters */}
-      <section className="bg-white/60 backdrop-blur-xl rounded-[2rem] border border-white/60 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 space-y-6">
+      <section className="bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-[2rem] border border-white/40 dark:border-slate-800 shadow-[0_8px_32px_-8px_rgba(0,0,0,0.1)] p-6 sm:p-8 space-y-6 transition-colors">
         <div className="space-y-1.5">
-          <label htmlFor="user-filter" className="block text-sm font-semibold text-slate-700 ml-1">Сотрудник</label>
+          <label htmlFor="user-filter" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">Сотрудник</label>
           <select
             id="user-filter"
             value={selectedUser}
             onChange={(e) => setSelectedUser(e.target.value)}
-            className="flex h-12 w-full rounded-xl border border-slate-200 bg-slate-50/50 px-4 py-2 text-base ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/20 focus-visible:border-blue-500 transition-all shadow-sm hover:border-slate-300 cursor-pointer"
+            className="flex h-12 w-full rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50/50 dark:bg-slate-800/50 dark:text-white px-4 py-2 text-base ring-offset-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/20 focus-visible:border-blue-500 transition-all shadow-sm hover:border-slate-300 dark:hover:border-slate-600 cursor-pointer"
           >
-            <option value="" disabled>-- Выберите швею --</option>
+            <option value="" disabled className="dark:bg-slate-900">-- Выберите швею --</option>
             {users.map(u => (
-              <option key={u.id} value={u.id} className="font-medium">{u.name}</option>
+              <option key={u.id} value={u.id} className="font-medium dark:bg-slate-900">{u.name}</option>
             ))}
           </select>
         </div>
@@ -188,14 +188,14 @@ export default function ReportsPage() {
             type="date" 
             label="С этой даты" 
             value={startDate} 
-            className="h-12 bg-slate-50/50 border-slate-200"
+            className="h-12 bg-slate-50/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700"
             onChange={e => setStartDate(e.target.value)} 
           />
           <Input 
             type="date" 
             label="По эту дату" 
             value={endDate} 
-            className="h-12 bg-slate-50/50 border-slate-200"
+            className="h-12 bg-slate-50/50 dark:bg-slate-800/50 border-slate-200 dark:border-slate-700"
             onChange={e => setEndDate(e.target.value)} 
           />
         </div>
@@ -266,7 +266,7 @@ export default function ReportsPage() {
 
       {/* Missing Seamstress Prompt */}
       {!selectedUser && users.length > 0 && (
-        <div className="text-center p-8 text-slate-500 bg-white/40 backdrop-blur-md border-2 border-dashed border-white/80 rounded-[2rem]">
+        <div className="text-center p-8 text-slate-500 dark:text-slate-400 bg-white/40 dark:bg-slate-900/40 backdrop-blur-md border-2 border-dashed border-white/80 dark:border-slate-700 rounded-[2rem]">
           Выберите сотрудника для расчета зарплаты
         </div>
       )}
